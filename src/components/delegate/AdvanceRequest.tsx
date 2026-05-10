@@ -84,6 +84,7 @@ function ProgressBar({ currentStep }: { currentStep: number }) {
   const steps = [
     { label: f.step1, short: '1' },
     { label: f.step2, short: '2' },
+    { label: f.step3, short: '3' },
   ];
 
   return (
@@ -276,7 +277,7 @@ function Step1({
             value={data.amount ? Number(data.amount).toLocaleString() : ''}
             onChange={(e) => handleAmountChange(e.target.value)}
             placeholder={f.amountPlaceholder}
-            className={`w-full ps-9 pe-16 py-3 bg-gray-50 border rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
+            className={`w-full ps-9 pe-16 bg-gray-50 border rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
               errors.amount ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
             }`}
           />
@@ -468,9 +469,64 @@ function Step1({
         )}
       </AnimatePresence>
 
-      {/* Separator */}
-      <div className="border-t border-gray-100" />
+      {/* Next Button */}
+      <button
+        type="button"
+        onClick={handleNext}
+        className="w-full py-3.5 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
+      >
+        {common.next}
+        <ArrowIcon className="w-4 h-4" />
+      </button>
+    </motion.div>
+  );
+}
 
+/* ------------------------------------------------------------------ */
+/*  Step 2: Additional Data                                            */
+/* ------------------------------------------------------------------ */
+
+function Step2Additional({
+  data,
+  onChange,
+  onNext,
+  onBack,
+}: {
+  data: AdvanceFormData;
+  onChange: (d: AdvanceFormData) => void;
+  onNext: () => void;
+  onBack: () => void;
+}) {
+  const { t, locale } = useI18n();
+  const f = t.advanceForm as Record<string, string>;
+  const common = t.common as Record<string, string>;
+  const isRTL = locale === 'ar';
+
+  const additionalInputRef = useRef<HTMLInputElement>(null);
+
+  const handleAttachmentAdd = (files: FileList | null) => {
+    if (!files) return;
+    const newFiles = Array.from(files).map((file) => ({ file, name: file.name }));
+    onChange({
+      ...data,
+      attachments: [...data.attachments, ...newFiles].slice(0, 5),
+    });
+  };
+
+  const removeAttachment = (index: number) => {
+    const updated = [...data.attachments];
+    updated.splice(index, 1);
+    onChange({ ...data, attachments: updated });
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: isRTL ? 20 : -20 }}
+      transition={{ duration: 0.3 }}
+      className="px-5 pb-3 flex flex-col gap-3"
+    >
       {/* Additional Notes */}
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
@@ -481,10 +537,13 @@ function Step1({
           value={data.notes}
           onChange={(e) => onChange({ ...data, notes: e.target.value })}
           placeholder={f.additionalNotesPlaceholder}
-          rows={2}
-          className="w-full px-3 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 resize-none"
+          rows={3}
+          className="w-full px-3 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 resize-none leading-relaxed"
         />
       </div>
+
+      {/* Separator */}
+      <div className="border-t border-gray-100" />
 
       {/* Additional Attachments */}
       <div>
@@ -530,21 +589,31 @@ function Step1({
         />
       </div>
 
-      {/* Next Button */}
-      <button
-        type="button"
-        onClick={handleNext}
-        className="w-full py-3.5 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
-      >
-        {common.next}
-        <ArrowIcon className="w-4 h-4" />
-      </button>
+      {/* Navigation Buttons */}
+      <div className="flex gap-2.5">
+        <button
+          type="button"
+          onClick={onBack}
+          className="flex-1 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
+        >
+          {isRTL ? <ArrowRight className="w-4 h-4" /> : <ArrowLeft className="w-4 h-4" />}
+          {common.back}
+        </button>
+        <button
+          type="button"
+          onClick={onNext}
+          className="flex-1 py-3 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
+        >
+          {common.next}
+          {isRTL ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+        </button>
+      </div>
     </motion.div>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  Step 2: Review & Submit                                            */
+/*  Step 3: Review & Submit                                            */
 /* ------------------------------------------------------------------ */
 
 function Step2({
@@ -766,7 +835,7 @@ export function AdvanceRequest() {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleNext = () => {
-    if (step < 2) setStep(step + 1);
+    if (step < 3) setStep(step + 1);
   };
 
   const handleBackToServices = () => {
@@ -837,8 +906,17 @@ export function AdvanceRequest() {
                     />
                   )}
                   {step === 2 && (
-                    <Step2
+                    <Step2Additional
                       key="step2"
+                      data={formData}
+                      onChange={setFormData}
+                      onNext={handleNext}
+                      onBack={handleBack}
+                    />
+                  )}
+                  {step === 3 && (
+                    <Step2
+                      key="step3"
                       data={formData}
                       onBack={handleBack}
                       onSubmit={handleSubmitDone}

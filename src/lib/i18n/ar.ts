@@ -132,7 +132,8 @@ export const ar = {
   // Advance Request Form
   advanceForm: {
     step1: 'تفاصيل السلفة',
-    step2: 'مراجعة وإرسال',
+    step2: 'بيانات إضافية',
+    step3: 'مراجعة وإرسال',
     // Available advance card
     availableAdvance: 'السلفة المتاحة',
     availableAdvanceDesc: 'المبلغ المتبقي الذي يمكنك طلبه كسلفة',
@@ -143,8 +144,8 @@ export const ar = {
     reason: 'سبب طلب السلفة',
     reasonPlaceholder: 'أدخل سبب طلب السلفة...',
     receiveMethod: 'طريقة الاستلام',
-    receiveMethodBank: 'تحويل إلى الحساب البنكي',
-    receiveMethodCash: 'استلام نقدي من الشركة',
+    receiveMethodBank: 'إلى الحساب البنكي',
+    receiveMethodCash: 'استلام من الشركة',
     selectBankAccount: 'اختر الحساب البنكي',
     selectBankAccountPlaceholder: 'اختر حساباً بنكياً',
     additionalNotes: 'ملاحظات إضافية (اختياري)',
