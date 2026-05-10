@@ -108,7 +108,7 @@ function ProgressBar({ currentStep }: { currentStep: number }) {
                 {isDone ? <Check className="w-4 h-4" /> : step.short}
               </div>
               <span
-                className={`text-[10px] mt-1 font-semibold leading-tight text-center transition-colors duration-300 ${
+                className={`text-[12px] mt-1.5 font-bold leading-tight text-center transition-colors duration-300 ${
                   isActive ? 'text-[#007AFF]' : isDone ? 'text-gray-600' : 'text-gray-400'
                 }`}
               >
@@ -265,7 +265,7 @@ function Step1({
 
       {/* Amount */}
       <div>
-        <label className="text-[12px] font-bold text-gray-600 mb-1.5 block">
+        <label className="text-[15px] font-bold text-gray-900 mb-2 block">
           {f.amount}
         </label>
         <div className="relative">
@@ -276,25 +276,25 @@ function Step1({
             value={data.amount ? Number(data.amount).toLocaleString() : ''}
             onChange={(e) => handleAmountChange(e.target.value)}
             placeholder={f.amountPlaceholder}
-            className={`w-full ps-9 pe-16 py-2.5 bg-gray-50 border rounded-lg text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-[#007AFF]/40 focus:border-[#007AFF]/40 transition-all ${
+            className={`w-full ps-9 pe-16 py-3 bg-gray-50 border rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
               errors.amount ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
             }`}
           />
-          <span className="absolute end-3 top-1/2 -translate-y-1/2 text-[12px] font-bold text-gray-400">
+          <span className="absolute end-3 top-1/2 -translate-y-1/2 text-[13px] font-bold text-gray-500">
             {f.currency}
           </span>
         </div>
-        <p className="text-[11px] text-gray-400 mt-1 ps-0.5">
+        <p className="text-[13px] text-gray-500 mt-1 ps-0.5">
           {f.amountHint} {AVAILABLE_ADVANCE.toLocaleString()} {f.currency}
         </p>
         {errors.amount && (
-          <p className="text-[11px] text-red-500 mt-0.5 ps-0.5 font-medium">{errors.amount}</p>
+          <p className="text-[13px] text-red-500 mt-0.5 ps-0.5 font-medium">{errors.amount}</p>
         )}
       </div>
 
       {/* Reason */}
       <div>
-        <label className="text-[12px] font-bold text-gray-600 mb-1.5 block">
+        <label className="text-[15px] font-bold text-gray-900 mb-2 block">
           {f.reason}
         </label>
         <textarea
@@ -302,18 +302,18 @@ function Step1({
           onChange={(e) => onChange({ ...data, reason: e.target.value })}
           placeholder={f.reasonPlaceholder}
           rows={3}
-          className={`w-full px-3 py-2.5 bg-gray-50 border rounded-lg text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-[#007AFF]/40 focus:border-[#007AFF]/40 resize-none leading-relaxed ${
+          className={`w-full px-3 py-3 bg-gray-50 border rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 resize-none leading-relaxed ${
             errors.reason ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
           }`}
         />
         {errors.reason && (
-          <p className="text-[11px] text-red-500 mt-0.5 ps-0.5 font-medium">{errors.reason}</p>
+          <p className="text-[13px] text-red-500 mt-0.5 ps-0.5 font-medium">{errors.reason}</p>
         )}
       </div>
 
       {/* Receive Method - Inline Radio Buttons */}
       <div>
-        <label className="text-[12px] font-bold text-gray-600 mb-1.5 block">
+        <label className="text-[15px] font-bold text-gray-900 mb-2 block">
           {f.receiveMethod}
         </label>
         <div className="flex items-center gap-0">
@@ -375,7 +375,7 @@ function Step1({
           </button>
         </div>
         {errors.receiveMethod && (
-          <p className="text-[11px] text-red-500 mt-1 ps-0.5 font-medium">{errors.receiveMethod}</p>
+          <p className="text-[13px] text-red-500 mt-1 ps-0.5 font-medium">{errors.receiveMethod}</p>
         )}
       </div>
 
@@ -390,7 +390,7 @@ function Step1({
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <label className="text-[12px] font-bold text-gray-600 mb-1.5 block">
+            <label className="text-[15px] font-bold text-gray-900 mb-2 block">
               {f.selectBankAccount}
             </label>
             <div className="relative">
@@ -398,7 +398,7 @@ function Step1({
               <button
                 type="button"
                 onClick={() => setBankOpen(!bankOpen)}
-                className={`w-full ps-9 pe-9 py-2.5 bg-gray-50 border rounded-lg text-[14px] text-start focus:outline-none focus:ring-1 focus:ring-[#007AFF]/40 focus:border-[#007AFF]/40 transition-all ${
+                className={`w-full ps-9 pe-9 py-3 bg-gray-50 border rounded-xl text-[15px] text-start focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
                   errors.bankAccountId ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
                 }`}
               >
@@ -462,7 +462,7 @@ function Step1({
               </AnimatePresence>
             </div>
             {errors.bankAccountId && (
-              <p className="text-[11px] text-red-500 mt-0.5 ps-0.5 font-medium">{errors.bankAccountId}</p>
+              <p className="text-[13px] text-red-500 mt-0.5 ps-0.5 font-medium">{errors.bankAccountId}</p>
             )}
           </motion.div>
         )}
@@ -475,14 +475,14 @@ function Step1({
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
           <StickyNote className="w-3.5 h-3.5 text-gray-400" />
-          <p className="text-[12px] font-bold text-gray-600">{f.additionalNotes}</p>
+          <p className="text-[15px] font-bold text-gray-900">{f.additionalNotes}</p>
         </div>
         <textarea
           value={data.notes}
           onChange={(e) => onChange({ ...data, notes: e.target.value })}
           placeholder={f.additionalNotesPlaceholder}
           rows={2}
-          className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-[14px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-[#007AFF]/40 focus:border-[#007AFF]/40 resize-none"
+          className="w-full px-3 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 resize-none"
         />
       </div>
 
@@ -490,16 +490,16 @@ function Step1({
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
           <Paperclip className="w-3.5 h-3.5 text-gray-400" />
-          <p className="text-[12px] font-bold text-gray-600">{f.additionalAttachments}</p>
+          <p className="text-[15px] font-bold text-gray-900">{f.additionalAttachments}</p>
         </div>
-        <p className="text-[11px] text-gray-400 mb-2">{f.additionalAttachmentsHint}</p>
+        <p className="text-[13px] text-gray-500 mb-2">{f.additionalAttachmentsHint}</p>
 
         {data.attachments.length > 0 && (
           <div className="flex flex-col gap-1.5 mb-2">
             {data.attachments.map((att, idx) => (
               <div key={idx} className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                 <FileText className="w-4 h-4 text-gray-400 shrink-0" />
-                <span className="text-[12px] text-gray-600 flex-1 truncate">
+                <span className="text-[13px] text-gray-600 flex-1 truncate">
                   {att.name}
                 </span>
                 <button type="button" onClick={() => removeAttachment(idx)}>
@@ -514,7 +514,7 @@ function Step1({
           <button
             type="button"
             onClick={() => additionalInputRef.current?.click()}
-            className="w-full py-2.5 border border-dashed border-gray-200 rounded-lg flex items-center justify-center gap-1.5 text-[12px] text-gray-400 hover:border-[#007AFF] hover:text-[#007AFF] transition-colors"
+            className="w-full py-1.5 border border-dashed border-gray-200 rounded-lg flex items-center justify-center gap-1.5 text-[12px] text-gray-400 hover:border-[#007AFF] hover:text-[#007AFF] transition-colors"
           >
             <Upload className="w-4 h-4" />
             {f.addAttachment}
@@ -534,7 +534,7 @@ function Step1({
       <button
         type="button"
         onClick={handleNext}
-        className="w-full py-3 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[14px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
+        className="w-full py-3.5 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
       >
         {common.next}
         <ArrowIcon className="w-4 h-4" />
@@ -581,13 +581,13 @@ function Step2({
     >
       {/* Review Header */}
       <div className="text-center">
-        <p className="text-[15px] font-bold text-gray-900">{f.reviewTitle}</p>
-        <p className="text-[12px] text-gray-400">{f.reviewSubtitle}</p>
+        <p className="text-[17px] font-bold text-gray-900">{f.reviewTitle}</p>
+        <p className="text-[15px] text-gray-500">{f.reviewSubtitle}</p>
       </div>
 
       {/* Advance Details */}
       <div className="bg-gray-50 rounded-xl p-3">
-        <p className="text-[12px] font-bold text-[#007AFF] mb-2">
+        <p className="text-[15px] font-bold text-[#007AFF] mb-3">
           {f.detailsSection}
         </p>
         <div className="flex flex-col gap-2">
@@ -611,8 +611,8 @@ function Step2({
                   })()}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[12px] font-semibold text-gray-900">{selectedBank.accountName}</p>
-                  <p className="text-[10px] text-gray-400 font-mono">{selectedBank.iban}</p>
+                  <p className="text-[13px] font-semibold text-gray-900">{selectedBank.accountName}</p>
+                  <p className="text-[12px] text-gray-400 font-mono">{selectedBank.iban}</p>
                 </div>
               </div>
             </div>
@@ -624,7 +624,7 @@ function Step2({
       {/* Attachments */}
       {data.attachments.length > 0 && (
         <div className="bg-gray-50 rounded-xl p-3">
-          <p className="text-[12px] font-bold text-[#007AFF] mb-2">
+          <p className="text-[15px] font-bold text-[#007AFF] mb-3">
             {f.attachmentsSection}
           </p>
           <ReviewItem
@@ -639,7 +639,7 @@ function Step2({
         <button
           type="button"
           onClick={onBack}
-          className="flex-1 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-xl text-[14px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
+          className="flex-1 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
         >
           {isRTL ? <ArrowRight className="w-4 h-4" /> : <ArrowLeft className="w-4 h-4" />}
           {common.back}
@@ -648,7 +648,7 @@ function Step2({
           type="button"
           onClick={handleSubmit}
           disabled={isSubmitting}
-          className="flex-1 py-3 bg-[#007AFF] hover:bg-[#0066DD] disabled:bg-gray-300 text-white font-bold rounded-xl text-[14px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
+          className="flex-1 py-3 bg-[#007AFF] hover:bg-[#0066DD] disabled:bg-gray-300 text-white font-bold rounded-xl text-[15px] flex items-center justify-center gap-2 shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
         >
           {isSubmitting ? (
             <motion.div
@@ -683,9 +683,9 @@ function ReviewItem({
 }) {
   return (
     <div>
-      {label && <p className="text-[11px] text-gray-400">{label}</p>}
+      {label && <p className="text-[13px] font-bold text-gray-500">{label}</p>}
       <p
-        className={`text-[13px] font-medium ${
+        className={`text-[15px] font-medium ${
           highlight ? 'text-emerald-600' : 'text-gray-800'
         }`}
       >
@@ -722,18 +722,18 @@ function SuccessScreen() {
       >
         <CheckCircle2 className="w-10 h-10 text-green-600" />
       </motion.div>
-      <h2 className="text-[18px] font-bold text-gray-900 mb-1">{f.successTitle}</h2>
-      <p className="text-[13px] text-gray-500 text-center leading-relaxed mb-4">
+      <h2 className="text-[20px] font-bold text-gray-900 mb-1">{f.successTitle}</h2>
+      <p className="text-[15px] text-gray-500 text-center leading-relaxed mb-4">
         {f.successMessage}
       </p>
       <div className="bg-gray-50 rounded-lg px-5 py-3 mb-6">
-        <p className="text-[11px] text-gray-400">{f.requestNumber}</p>
-        <p className="text-[15px] font-bold text-[#007AFF]">{requestNum}</p>
+        <p className="text-[13px] text-gray-500">{f.requestNumber}</p>
+        <p className="text-[17px] font-bold text-[#007AFF]">{requestNum}</p>
       </div>
       <button
         type="button"
         onClick={() => setActiveServiceForm(null)}
-        className="w-full py-3 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[14px] shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
+        className="w-full py-3.5 bg-[#007AFF] hover:bg-[#0066DD] text-white font-bold rounded-xl text-[15px] shadow-md shadow-[#007AFF]/20 active:scale-[0.98] transition-all"
       >
         {f.backToServices}
       </button>
@@ -789,10 +789,10 @@ export function AdvanceRequest() {
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100 bg-white shrink-0">
         <div className="flex-1">
-          <h1 className="text-[15px] font-bold text-gray-900">
+          <h1 className="text-[17px] font-bold text-gray-900">
             {t.services.serviceAdvance as string}
           </h1>
-          <p className="text-[11px] text-gray-400">
+          <p className="text-[13px] text-gray-500">
             {t.services.serviceAdvanceDesc as string}
           </p>
         </div>
@@ -808,7 +808,7 @@ export function AdvanceRequest() {
           <button
             type="button"
             onClick={handleBackToServices}
-            className="flex items-center gap-1.5 px-5 pt-3 pb-2 text-[12px] text-[#007AFF] font-medium hover:text-[#0066DD] transition-colors self-start"
+            className="flex items-center gap-2 px-5 pt-3 pb-2 text-[14px] text-[#007AFF] font-semibold hover:text-[#0066DD] transition-colors self-start"
           >
             <BackArrow className="w-4 h-4" />
             {common.back}
