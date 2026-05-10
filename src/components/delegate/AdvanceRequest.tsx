@@ -277,7 +277,7 @@ function Step1({
             value={data.amount ? Number(data.amount).toLocaleString() : ''}
             onChange={(e) => handleAmountChange(e.target.value)}
             placeholder={f.amountPlaceholder}
-            className={`w-full ps-9 pe-16 bg-gray-50 border rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
+            className={`w-full ps-9 pe-16 py-1 bg-gray-50 border rounded-xl text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
               errors.amount ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
             }`}
           />
@@ -399,7 +399,7 @@ function Step1({
               <button
                 type="button"
                 onClick={() => setBankOpen(!bankOpen)}
-                className={`w-full ps-9 pe-9 py-3 bg-gray-50 border rounded-xl text-[15px] text-start focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
+                className={`w-full ps-9 pe-9 py-1 bg-gray-50 border rounded-xl text-[15px] text-start focus:outline-none focus:ring-2 focus:ring-[#007AFF]/20 focus:border-[#007AFF]/40 transition-all ${
                   errors.bankAccountId ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
                 }`}
               >
@@ -590,7 +590,7 @@ function Step2Additional({
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex gap-2.5">
+      <div className="flex gap-2.5 mt-5">
         <button
           type="button"
           onClick={onBack}
@@ -752,7 +752,7 @@ function ReviewItem({
 }) {
   return (
     <div>
-      {label && <p className="text-[13px] font-bold text-gray-500">{label}</p>}
+      {label && <p className="text-[13px] font-bold text-gray-900">{label}</p>}
       <p
         className={`text-[15px] font-medium ${
           highlight ? 'text-emerald-600' : 'text-gray-800'
