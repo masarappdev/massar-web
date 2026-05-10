@@ -363,7 +363,7 @@ function Step2({
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
           <Camera className="w-4 h-4 text-[#007AFF]" />
-          <p className="text-[15px] font-semibold text-gray-900">{f.photosTitle}</p>
+          <p className="text-[15px] font-bold text-gray-900">{f.photosTitle}</p>
         </div>
         <p className="text-[13px] text-gray-500 mb-2">{f.photosHint}</p>
         <div className="flex gap-2 flex-wrap">
@@ -409,7 +409,7 @@ function Step2({
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
           <ShieldCheck className="w-4 h-4 text-[#007AFF]" />
-          <p className="text-[15px] font-semibold text-gray-900">{f.najmTitle}</p>
+          <p className="text-[15px] font-bold text-gray-900">{f.najmTitle}</p>
         </div>
         <p className="text-[13px] text-gray-500 mb-2">{f.najmHint}</p>
         {data.najmReport ? (
@@ -429,7 +429,7 @@ function Step2({
           <button
             type="button"
             onClick={() => najmInputRef.current?.click()}
-            className="w-full py-2.5 border border-dashed border-gray-300 rounded-lg flex items-center justify-center gap-1.5 text-[12px] text-gray-500 hover:border-[#007AFF] hover:text-[#007AFF] hover:bg-[#007AFF]/5 transition-colors"
+            className="w-full py-1.5 border border-dashed border-gray-300 rounded-lg flex items-center justify-center gap-1.5 text-[12px] text-gray-500 hover:border-[#007AFF] hover:text-[#007AFF] hover:bg-[#007AFF]/5 transition-colors"
           >
             <Upload className="w-4 h-4" />
             {f.uploadFile}
@@ -451,7 +451,7 @@ function Step2({
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
           <Paperclip className="w-3.5 h-3.5 text-gray-400" />
-          <p className="text-[15px] font-semibold text-gray-900">{f.additionalTitle}</p>
+          <p className="text-[15px] font-bold text-gray-900">{f.additionalTitle}</p>
         </div>
         <p className="text-[13px] text-gray-500 mb-2">{f.additionalHint}</p>
         {data.additionalAttachments.length > 0 && (
@@ -472,7 +472,7 @@ function Step2({
         <button
           type="button"
           onClick={() => additionalInputRef.current?.click()}
-          className="w-full py-2.5 border border-dashed border-gray-200 rounded-lg flex items-center justify-center gap-1.5 text-[12px] text-gray-400 hover:border-[#007AFF] hover:text-[#007AFF] transition-colors"
+          className="w-full py-1.5 border border-dashed border-gray-200 rounded-lg flex items-center justify-center gap-1.5 text-[12px] text-gray-400 hover:border-[#007AFF] hover:text-[#007AFF] transition-colors"
         >
           <Plus className="w-4 h-4" />
           {f.addPhoto}
@@ -494,7 +494,7 @@ function Step2({
       <div>
         <div className="flex items-center gap-1.5 mb-1.5">
           <StickyNote className="w-3.5 h-3.5 text-gray-400" />
-          <p className="text-[15px] font-semibold text-gray-900">{f.notesTitle}</p>
+          <p className="text-[15px] font-bold text-gray-900">{f.notesTitle}</p>
         </div>
         <textarea
           value={data.notes}
@@ -662,7 +662,7 @@ function ReviewItem({
 }) {
   return (
     <div>
-      {label && <p className="text-[13px] text-gray-500">{label}</p>}
+      {label && <p className="text-[13px] font-bold text-gray-500">{label}</p>}
       <p
         className={`text-[15px] font-medium ${
           highlight ? 'text-amber-600' : 'text-gray-900'
