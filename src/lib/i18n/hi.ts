@@ -156,6 +156,52 @@ export const hi = {
     methodRequired: 'कृपया प्राप्ति विधि चुनें',
     bankRequired: 'कृपया बैंक खाता चुनें',
     currency: 'SAR',
+    // Updated steps (3-step form)
+    step2Updated: 'Additional Data',
+    step3: 'Review & Submit',
+  },
+  // Annual Leave Request Form
+  annualLeaveForm: {
+    step1: 'अनुरोध विवरण',
+    step2: 'समीक्षा और भेजें',
+    // Balance card
+    balanceCardTitle: 'छुट्टी शेष',
+    remainingLabel: 'आपकी वार्षिक छुट्टी के शेष दिन',
+    totalLabel: 'कुल',
+    usedLabel: 'उपयोग किया',
+    days: 'दिन',
+    // Step 1 fields
+    reason: 'छुट्टी का कारण',
+    reasonPlaceholder: 'छुट्टी का कारण दर्ज करें...',
+    daysPlaceholder: 'छुट्टी के दिनों की संख्या दर्ज करें',
+    startDate: 'छुट्टी प्रारंभ तिथि',
+    endDate: 'छुट्टी समाप्ति तिथि',
+    autoCalculated: 'स्वचालित',
+    contactDuringLeave: 'छुट्टी के दौरान संपर्क',
+    contactDuringLeavePlaceholder: 'फ़ोन नंबर या संपर्क व्यक्ति...',
+    optional: 'वैकल्पिक',
+    attachments: 'फ़ाइलें संलग्न करें',
+    attachmentsHint: 'आप कोई भी सहायक दस्तावेज़ संलग्न कर सकते हैं (अधिकतम 5)',
+    addAttachment: 'अनुलग्नक जोड़ें',
+    // Step 2
+    reviewTitle: 'डेटा की समीक्षा',
+    reviewSubtitle: 'कृपया भेजने से पहले डेटा की समीक्षा करें',
+    detailsSection: 'छुट्टी विवरण',
+    leavePeriod: 'छुट्टी अवधि',
+    attachmentsSection: 'अनुलग्नक',
+    attachmentsCount: 'अनुलग्नक',
+    // Submit
+    submit: 'अनुरोध भेजें',
+    // Success
+    successTitle: 'अनुरोध सफलतापूर्वक भेजा गया',
+    successMessage: 'आपका छुट्टी अनुरोध सफलतापूर्वक जमा हो गया है और समीक्षा किया जाएगा। आपको सूचना प्राप्त होगी।',
+    backToServices: 'सेवाओं पर वापस',
+    requestNumber: 'अनुरोध संख्या',
+    // Validation
+    reasonRequired: 'कृपया छुट्टी का कारण दर्ज करें',
+    daysRequired: 'कृपया छुट्टी के दिनों की संख्या दर्ज करें',
+    daysExceeds: 'दिनों की संख्या उपलब्ध शेष से अधिक है',
+    startDateRequired: 'कृपया छुट्टी प्रारंभ तिथि चुनें',
   },
   // Tabs
   tabs: {

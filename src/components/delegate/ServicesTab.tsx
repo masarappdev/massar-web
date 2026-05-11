@@ -27,6 +27,7 @@ import type { Locale } from '@/lib/i18n';
 import { useAppStore } from '@/lib/store';
 import { AccidentReport } from './AccidentReport';
 import { AdvanceRequest } from './AdvanceRequest';
+import { AnnualLeaveRequest } from './AnnualLeaveRequest';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -130,6 +131,7 @@ function ServiceCard({
           e.stopPropagation();
           if (service.id === 'accident') setActiveServiceForm('accident');
           if (service.id === 'advance') setActiveServiceForm('advance');
+          if (service.id === 'annual-leave') setActiveServiceForm('annual-leave');
         }}
       >
         {svc.viewDetailsBtn}
@@ -421,6 +423,11 @@ export function ServicesTab() {
   // Show advance request form if active (after all hooks)
   if (activeServiceForm === 'advance') {
     return <AdvanceRequest />;
+  }
+
+  // Show annual leave request form if active (after all hooks)
+  if (activeServiceForm === 'annual-leave') {
+    return <AnnualLeaveRequest />;
   }
 
   return (

@@ -175,6 +175,49 @@ export const ar = {
     // Currency
     currency: 'ريال',
   },
+  // Annual Leave Request Form
+  annualLeaveForm: {
+    step1: 'تفاصيل الطلب',
+    step2: 'مراجعة وإرسال',
+    // Balance card
+    balanceCardTitle: 'رصيد الإجازات',
+    remainingLabel: 'أيام متبقية من إجازتك السنوية',
+    totalLabel: 'الإجمالي',
+    usedLabel: 'المستخدم',
+    days: 'أيام',
+    // Step 1 fields
+    reason: 'سبب الإجازة',
+    reasonPlaceholder: 'أدخل سبب الإجازة...',
+    daysPlaceholder: 'أدخل عدد أيام الإجازة',
+    startDate: 'تاريخ بداية الإجازة',
+    endDate: 'تاريخ انتهاء الإجازة',
+    autoCalculated: 'تلقائي',
+    contactDuringLeave: 'جهة التواصل أثناء الإجازة',
+    contactDuringLeavePlaceholder: 'رقم هاتف أو جهة التواصل...',
+    optional: 'اختياري',
+    attachments: 'إرفاق ملفات',
+    attachmentsHint: 'يمكنك إرفاق أي مستندات داعمة (الحد الأقصى 5)',
+    addAttachment: 'إضافة مرفق',
+    // Step 2
+    reviewTitle: 'مراجعة البيانات',
+    reviewSubtitle: 'يرجى مراجعة البيانات قبل الإرسال',
+    detailsSection: 'تفاصيل الإجازة',
+    leavePeriod: 'فترة الإجازة',
+    attachmentsSection: 'المرفقات',
+    attachmentsCount: 'مرفقات مرفقة',
+    // Submit
+    submit: 'إرسال الطلب',
+    // Success
+    successTitle: 'تم إرسال الطلب بنجاح',
+    successMessage: 'تم تقديم طلب الإجازة بنجاح وسيتم مراجعته. ستصلك إشعار بنتيجة الطلب.',
+    backToServices: 'العودة للخدمات',
+    requestNumber: 'رقم الطلب',
+    // Validation
+    reasonRequired: 'يرجى إدخال سبب الإجازة',
+    daysRequired: 'يرجى إدخال عدد أيام الإجازة',
+    daysExceeds: 'عدد الأيام يتجاوز الرصيد المتاح',
+    startDateRequired: 'يرجى تحديد تاريخ بداية الإجازة',
+  },
   // Tabs
   tabs: {
     homeTitle: 'الرئيسية',

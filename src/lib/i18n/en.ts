@@ -157,6 +157,49 @@ export const en = {
     bankRequired: 'Please select a bank account',
     currency: 'SAR',
   },
+  // Annual Leave Request Form
+  annualLeaveForm: {
+    step1: 'Request Details',
+    step2: 'Review & Submit',
+    // Balance card
+    balanceCardTitle: 'Leave Balance',
+    remainingLabel: 'Remaining days of your annual leave',
+    totalLabel: 'Total',
+    usedLabel: 'Used',
+    days: 'Days',
+    // Step 1 fields
+    reason: 'Leave Reason',
+    reasonPlaceholder: 'Enter the reason for leave...',
+    daysPlaceholder: 'Enter number of leave days',
+    startDate: 'Leave Start Date',
+    endDate: 'Leave End Date',
+    autoCalculated: 'Auto',
+    contactDuringLeave: 'Contact During Leave',
+    contactDuringLeavePlaceholder: 'Phone number or contact person...',
+    optional: 'Optional',
+    attachments: 'Attach Files',
+    attachmentsHint: 'You can attach any supporting documents (max 5)',
+    addAttachment: 'Add Attachment',
+    // Step 2
+    reviewTitle: 'Review Data',
+    reviewSubtitle: 'Please review the data before submitting',
+    detailsSection: 'Leave Details',
+    leavePeriod: 'Leave Period',
+    attachmentsSection: 'Attachments',
+    attachmentsCount: 'attachments',
+    // Submit
+    submit: 'Submit Request',
+    // Success
+    successTitle: 'Request Submitted Successfully',
+    successMessage: 'Your leave request has been submitted and will be reviewed. You will receive a notification.',
+    backToServices: 'Back to Services',
+    requestNumber: 'Request Number',
+    // Validation
+    reasonRequired: 'Please enter the reason for leave',
+    daysRequired: 'Please enter the number of leave days',
+    daysExceeds: 'Number of days exceeds available balance',
+    startDateRequired: 'Please select a leave start date',
+  },
   // Tabs
   tabs: {
     homeTitle: 'Home',
